@@ -130,6 +130,11 @@ var options = {
   logger: logger
 }
 
+if (argv.d || argv.deterministic) {
+  options.time = new Date('2015-01-01T00:00:00.926Z');
+  console.log('Fix first block time to', options.time);
+}
+
 var fork_address;
 
 // If we're forking from another client, don't try to use the same port.
